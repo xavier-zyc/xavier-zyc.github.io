@@ -44,7 +44,7 @@ menu:
 time:
   enable: false
   year: 2020 # 年份
-  month: 06 # 月份
+  month: 11 # 月份
   date: 08 # 日期
   hour: 22 # 小时
   minute: 54 # 分钟
@@ -66,8 +66,8 @@ cover:
 dream:
   enable: true
   showTitle: true
-  title: 我的梦想
-  text: 不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+  title: 明日之我
+  text: 要把所有的夜归还给星河，把所有的春光归还给疏疏篱落，把所有的慵慵沉迷与不前，归还给过去的我。明日之我，胸中有丘壑，立马振山河。——德卡先生的信箱
 
 # Whether to display the musics.
 # 是否在首页显示音乐.
@@ -132,14 +132,14 @@ indexbtn:
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  github:  https://github.com/blinkfox
-  email: 1181062873@qq.com
+  github:  #https://github.com/blinkfox
+  email: #1181062873@qq.com
   facebook: # https://www.facebook.com/xxx
   twitter: # https://twitter.com/xxx
-  qq: 1181062873
+  qq: #1181062873
   weibo: # https://weibo.com/xxx
   zhihu: # https://www.zhihu.com/xxx
-  rss: true # true、false
+  rss: false # true、false
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -321,10 +321,10 @@ valine:
 # MiniValine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 # See: https://github.com/MiniValine/MiniValine
 minivaline:
-  enable: false
-  appId: zhM0AOiqle17oPoE84CoYw1e-gzGzoHsz # Your leancloud application appid
-  appKey: itmzT1JbXfAjVwMqDhGPzU45 # Your leancloud application appkey
-  mode: DesertsP # DesertsP or xCss
+  enable: true
+  appId: fpiM3yzXbp29nSDW3K0K2pKE-MdYXbMMI # Your leancloud application appid
+  appKey: EDhCyXiwBLfjrYoIo83q3CWc # Your leancloud application appkey
+  mode: xCss # DesertsP or xCss
   placeholder: Write a Comment # Comment box placeholder
   math: true # Support MathJax.
   md: true # Support Markdown.
@@ -333,23 +333,21 @@ minivaline:
   visitor: true # Article reading statistics.
   maxNest: 6 # Sub-comment maximum nesting depth.
   pageSize: 6 # Pagination size.
-  adminEmailMd5: de8a7aa53d07e6b6bceb45c64027763d # The MD5 of Admin Email to show Admin Flag.[Just Only DesertsP Style mode]
+  adminEmailMd5: fd415d93da0292af19b8ee66158e92e4 # The MD5 of Admin Email to show Admin Flag.[Just Only DesertsP Style mode]
   tagMeta: # The String Array of Words to show Flag.[Just Only xCss Style mode]
     - 管理员
     - 小伙伴
     - 访客
   master: # The MD5 String Array of master Email to show master Flag.[Just Only xCss Style mode]
-    - de8a7aa53d07e6b6bceb45c64027763d
+    - fd415d93da0292af19b8ee66158e92e4
   friends: # The MD5 String Array of friends Email to show friends Flag.[Just Only xCss Style mode]
-    - b5bd5d836c7a0091aa8473e79ed4c25e
-    - adb7d1cd192658a55c0ad22a3309cecf
-    - 3ce1e6c77b4910f1871106cb30dc62b0
-    - cfce8dc43725cc14ffcd9fb4892d5bfc
+    - 0bea6873c524be5a5ab3541cc84cd3a0
+    - 82ffb7bc8a56a741f0b9bb175dd8535d
   # MiniValine's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en  | zh-CN | (and many more)
   # More i18n info: https://github.com/MiniValine/minivaline-i18n
-  lang:
+  lang: zh-CN
   # Expression Url.
   # https://github.com/MiniValine/MiniValine/blob/master/.github/FAQ.md#how-to-customize-emoticons
   emoticonUrl:
@@ -364,8 +362,8 @@ minivaline:
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
   enable: false
-  url: https://github.com/blinkfox/hexo-theme-matery
-  title: Fork Me
+  url: # https://github.com/blinkfox/hexo-theme-matery
+  title: # Fork Me
 
 # The password verification feature of read post. To use this feature,
 # activate the configuration item and write the 'password' key and Cipher in the post's Front-matter.
