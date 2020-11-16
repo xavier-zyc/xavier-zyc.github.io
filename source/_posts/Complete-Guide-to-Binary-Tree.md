@@ -71,8 +71,51 @@ void traverse(TreeNode root, List<Integer> result) {
 
 #### 非递归方法 - Iterative Approach
 
+##### 前序遍历 + 中序遍历
+
 ```java
 List<Integer> traverse(TreeNode root) {
-  //
+  // Pre-order and In-order
+  Stack<TreeNode> sk = new Stack<>();
+  TreeNode node = root;
+  while (!sk.isEmpty() || node != null) {
+    while (node != null) {
+      sk.push(node);
+      result.add(node.val);// Pre-order
+      node = node.left;
+    }
+    if (!sk.isEmpty()) {
+      node = sk.pop();
+      // result.add(node.val);//In-order
+      node = node.right;
+    }
+  }
+  return result;
+}
+```
+
+##### 后序遍历
+
+```java
+List<Integer> traverse(TreeNode root) {
+  // Pre-order and In-order
+  Stack<TreeNode> sk = new Stack<>();
+  TreeNode node = root;
+  TreeNode lastVisit = root;
+  while (!sk.isEmpty() || node != null) {
+    while (node != null) {
+      sk.push(node);
+      node = node.left;
+    }
+    node = sk.peek();
+    if (node.right == null || node.right == lastVisit) {
+      result.add(node.val);
+      sk.pop();
+      node = null;
+    } else {
+      node = node.right;
+    }
+  }
+  return result;
 }
 ```
