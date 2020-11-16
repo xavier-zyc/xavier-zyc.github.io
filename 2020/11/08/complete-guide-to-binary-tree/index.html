@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -422,7 +422,84 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="二叉树完全指南"><a href="#二叉树完全指南" class="headerlink" title="二叉树完全指南"></a>二叉树完全指南</h1><h2 id="构造二叉树"><a href="#构造二叉树" class="headerlink" title="构造二叉树"></a>构造二叉树</h2><h3 id="二叉树节点类"><a href="#二叉树节点类" class="headerlink" title="二叉树节点类"></a>二叉树节点类</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">TreeNode</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> val<span class="token punctuation">;</span>
+  TreeNode left<span class="token punctuation">;</span>
+  TreeNode right<span class="token punctuation">;</span>
+  <span class="token function">TreeNode</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token function">TreeNode</span> <span class="token punctuation">(</span><span class="token keyword">int</span> val<span class="token punctuation">,</span> TreeNode left<span class="token punctuation">,</span> TreeNode right<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>left <span class="token operator">=</span> left<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>right <span class="token operator">=</span> right<span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<h3 id="构造二叉树-1"><a href="#构造二叉树-1" class="headerlink" title="构造二叉树"></a>构造二叉树</h3><blockquote>
+<p>利用完全二叉树数组构造二叉树</p>
+</blockquote>
+<pre class=" language-java"><code class="language-java">TreeNode <span class="token function">createTreeNode</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> __data<span class="token punctuation">,</span> <span class="token keyword">int</span> start<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// -1 here means null</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>start <span class="token operator">&gt;</span> __data<span class="token punctuation">.</span>length <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> __data<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  TreeNode root <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span>__data<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  root<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token function">createTreeNode</span><span class="token punctuation">(</span>__data<span class="token punctuation">,</span> <span class="token number">2</span> <span class="token operator">*</span> start <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  root<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">createTreeNode</span><span class="token punctuation">(</span>__data<span class="token punctuation">,</span> <span class="token number">2</span> <span class="token operator">*</span> start <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<h2 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h2><h3 id="常用的三种遍历方式"><a href="#常用的三种遍历方式" class="headerlink" title="常用的三种遍历方式"></a>常用的三种遍历方式</h3><ol>
+<li>前序遍历 (根左右) - Pre-order traversal (Root Left Right)</li>
+<li>中序遍历 (左根右) - In-order traversal (Left Root Right)</li>
+<li>后序遍历 (左右根) - Post-order traversal (Left Right Root)</li>
+</ol>
+<h4 id="递归方法-Recursive-Approach"><a href="#递归方法-Recursive-Approach" class="headerlink" title="递归方法 - Recursive Approach"></a>递归方法 - Recursive Approach</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">traverse</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> result<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">!=</span> null<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    result<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// Pre-order</span>
+    <span class="token function">traverse</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// result.add(root.val);// In-order</span>
+    <span class="token function">traverse</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>`
+    <span class="token comment" spellcheck="true">// result.add(root.val);// Post-order</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<h4 id="非递归方法-Iterative-Approach"><a href="#非递归方法-Iterative-Approach" class="headerlink" title="非递归方法 - Iterative Approach"></a>非递归方法 - Iterative Approach</h4><h5 id="前序遍历-中序遍历"><a href="#前序遍历-中序遍历" class="headerlink" title="前序遍历 + 中序遍历"></a>前序遍历 + 中序遍历</h5><pre class=" language-java"><code class="language-java">List<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> <span class="token function">traverse</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// Pre-order and In-order</span>
+  Stack<span class="token operator">&lt;</span>TreeNode<span class="token operator">&gt;</span> sk <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  TreeNode node <span class="token operator">=</span> root<span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>sk<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> node <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>node <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      sk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      result<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// Pre-order</span>
+      node <span class="token operator">=</span> node<span class="token punctuation">.</span>left<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>sk<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      node <span class="token operator">=</span> sk<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// result.add(node.val);//In-order</span>
+      node <span class="token operator">=</span> node<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<h5 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h5><pre class=" language-java"><code class="language-java">List<span class="token operator">&lt;</span>Integer<span class="token operator">&gt;</span> <span class="token function">traverse</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// Pre-order and In-order</span>
+  Stack<span class="token operator">&lt;</span>TreeNode<span class="token operator">&gt;</span> sk <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  TreeNode node <span class="token operator">=</span> root<span class="token punctuation">;</span>
+  TreeNode lastVisit <span class="token operator">=</span> root<span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>sk<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> node <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>node <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      sk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      node <span class="token operator">=</span> node<span class="token punctuation">.</span>left<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    node <span class="token operator">=</span> sk<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>right <span class="token operator">==</span> null <span class="token operator">||</span> node<span class="token punctuation">.</span>right <span class="token operator">==</span> lastVisit<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      result<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      sk<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      node <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      node <span class="token operator">=</span> node<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+
             </div>
             <hr/>
 
@@ -509,7 +586,7 @@
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="wechat,twitter,facebook,google,qq,qzone,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
@@ -667,6 +744,52 @@
     
 
     
+        <style>
+    .mvaline-card {
+        margin: 1.5rem auto;
+    }
+
+    .mvaline-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+</style>
+
+<div class="card mvaline-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="mvcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/minivaline/dist/MiniValine.min.js"></script>
+<script>
+    new MiniValine({
+        el: '#mvcomments',
+        appId: 'fpiM3yzXbp29nSDW3K0K2pKE-MdYXbMMI',
+        appKey: 'EDhCyXiwBLfjrYoIo83q3CWc',
+        mode: 'xCss',
+        placeholder: '请留下您的评论',
+        pathname: window.location.pathname,
+        lang: 'zh-CN',
+        adminEmailMd5: 'fd415d93da0292af19b8ee66158e92e4',
+        tagMeta: ["管理员", "小伙伴", "访客"],
+        master: ["fd415d93da0292af19b8ee66158e92e4"],
+        friends: ["0bea6873c524be5a5ab3541cc84cd3a0", "82ffb7bc8a56a741f0b9bb175dd8535d"],
+        math: true,
+        md: true,
+        enableQQ: false,
+        NoRecordIP: false,
+        visitor: true,
+        maxNest: 6,
+        pageSize: 6,
+        serverURLs: '',
+        emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
+    });
+</script>
+
+    
 
     
 
@@ -690,7 +813,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            二叉树完全指南
                         
                     </div>
                     <div class="publish-info">
@@ -941,15 +1064,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
 
 
 
@@ -957,19 +1071,12 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
 
 
 
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>
