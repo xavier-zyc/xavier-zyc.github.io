@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>修改Commit Message</title>
+      <link href="2020/11/17/xiu-gai-commit-message/"/>
+      <url>2020/11/17/xiu-gai-commit-message/</url>
+      
+        <content type="html"><![CDATA[<h1 id="修改Commit-Message"><a href="#修改Commit-Message" class="headerlink" title="修改Commit Message"></a>修改Commit Message</h1><h2 id="修改上一条提交的-commit-message"><a href="#修改上一条提交的-commit-message" class="headerlink" title="修改上一条提交的 commit message"></a>修改上一条提交的 commit message</h2><pre><code>git commit --ammend</code></pre><h2 id="修改之前提交的-commit-message"><a href="#修改之前提交的-commit-message" class="headerlink" title="修改之前提交的 commit message"></a>修改之前提交的 commit message</h2><p>首先，我们需要使用 <code>git rebase -i</code>, <code>git rebase -i</code> 提供一个参数，指明你想要修改的提交的父提交（-i 是–interactive的缩写）</p><p>例如：修改最近三次提交，事实上所指的是四次提交之前，即你想修改的提交的父提交</p><pre><code>git rebase -i HEAD~3</code></pre><p>接着会显示如下界面</p><pre><code>pick ef3f7de158 refs #16605[Fix]Not all approver is shownpick e0e5e8f595 refs #17605 change goalesce field to user idpick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_update# Rebase 9e993debaf..3e0cfc1536 onto 9e993debaf (3 commands)## Commands:# p, pick &lt;commit&gt; = use commit# r, reword &lt;commit&gt; = use commit, but edit the commit message# e, edit &lt;commit&gt; = use commit, but stop for amending</code></pre><p>选择你要修改的那一条commit，把 pick 改为 edit，然后保存退出</p><p>接着，就可以修改选定commit的commit message了</p><pre><code>git commit --ammend</code></pre><p>修改好之后，运行 <code>git rebase --continue</code></p><p>然后，就没有然后了~~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Complete Guide to Binary Tree</title>
       <link href="2020/11/08/complete-guide-to-binary-tree/"/>
       <url>2020/11/08/complete-guide-to-binary-tree/</url>
