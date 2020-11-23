@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="修改Commit Message, XAVIER">
+    <meta name="keywords" content="DateTime null value, XAVIER">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>修改Commit Message | XAVIER</title>
+    <title>DateTime null value | XAVIER</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">修改Commit Message</h1>
+                    <h1 class="description center-align post-title">DateTime null value</h1>
                 </div>
             </div>
         </div>
@@ -369,8 +369,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/Net/">
+                                <span class="chip bg-color">.Net</span>
+                            </a>
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C#</span>
+                            </a>
+                        
+                            <a href="/tags/null-value/">
+                                <span class="chip bg-color">null value</span>
                             </a>
                         
                     </div>
@@ -381,8 +389,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Git/" class="post-category">
-                                Git
+                            <a href="/categories/Net/" class="post-category">
+                                .Net
                             </a>
                         
                     </div>
@@ -394,7 +402,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-17
+                    2020-11-23
                 </div>
                 
 
@@ -410,26 +418,23 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="修改Commit-Message"><a href="#修改Commit-Message" class="headerlink" title="修改Commit Message"></a>修改Commit Message</h1><h2 id="修改上一条提交的-commit-message"><a href="#修改上一条提交的-commit-message" class="headerlink" title="修改上一条提交的 commit message"></a>修改上一条提交的 commit message</h2><pre><code>git commit --ammend</code></pre>
-<h2 id="修改之前提交的-commit-message"><a href="#修改之前提交的-commit-message" class="headerlink" title="修改之前提交的 commit message"></a>修改之前提交的 commit message</h2><p>首先，我们需要使用 <code>git rebase -i</code>, <code>git rebase -i</code> 提供一个参数，指明你想要修改的提交的父提交（-i 是–interactive的缩写）</p>
-<p>例如：修改最近三次提交，事实上所指的是四次提交之前，即你想修改的提交的父提交</p>
-<pre><code>git rebase -i HEAD~3</code></pre>
-<p>接着会显示如下界面</p>
-<pre><code>pick ef3f7de158 refs #16605[Fix]Not all approver is shown
-pick e0e5e8f595 refs #17605 change goalesce field to user id
-pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_update
-
-# Rebase 9e993debaf..3e0cfc1536 onto 9e993debaf (3 commands)
-#
-# Commands:
-# p, pick &lt;commit&gt; = use commit
-# r, reword &lt;commit&gt; = use commit, but edit the commit message
-# e, edit &lt;commit&gt; = use commit, but stop for amending</code></pre>
-<p>选择你要修改的那一条commit，把 pick 改为 edit，然后保存退出</p>
-<p>接着，就可以修改选定commit的commit message了</p>
-<pre><code>git commit --ammend</code></pre>
-<p>修改好之后，运行 <code>git rebase --continue</code></p>
-<p>然后，就没有然后了~~</p>
+                <h1 id="NULL-value-for-DateTime"><a href="#NULL-value-for-DateTime" class="headerlink" title="NULL value for DateTime"></a>NULL value for DateTime</h1><p>For normal DateTimes, if you don’t initialize them at all then they will match DateTime.MinValue, because it is a value type rather than a reference type.</p>
+<p>You can also use a nullable DateTime, like this:</p>
+<pre class=" language-CSharp"><code class="language-CSharp">DateTime? MyNullableDate;</code></pre>
+<p>Or longer version:</p>
+<pre class=" language-CSharp"><code class="language-CSharp">Nullable<DateTime> MyNullableDate;</code></pre>
+<p>And, finally, there’s a built in way to reference the default of any type. This returns null for reference types, but for our DateTime example it will return the same as DateTime.MinValue:</p>
+<pre class=" language-CSharp"><code class="language-CSharp">default(DateTime)</code></pre>
+<p>or, in more recent versions of C#,</p>
+<pre class=" language-CSharp"><code class="language-CSharp">default</code></pre>
+<p>And you can check the value with:</p>
+<pre class=" language-CSharp"><code class="language-CSharp">if (dt.HasValue)
+{
+  // Do something with dt.Value
+}</code></pre>
+<p>Or you can use it like:</p>
+<pre class=" language-CSharp"><code class="language-CSharp">DateTime dt2 = dt ?? DateTime.MinValue;</code></pre>
+<p>You can read more here:<br><a target="_blank" rel="noopener" href="http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx">http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx</a></p>
 
             </div>
             <hr/>
@@ -455,7 +460,7 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yunzhankeji.com/2020/11/17/xiu-gai-commit-message/">https://yunzhankeji.com/2020/11/17/xiu-gai-commit-message/</a>
+                    <a href="https://yunzhankeji.com/2020/11/23/datetime-null-value/">https://yunzhankeji.com/2020/11/23/datetime-null-value/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -493,8 +498,16 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/Net/">
+                                    <span class="chip bg-color">.Net</span>
+                                </a>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C#</span>
+                                </a>
+                            
+                                <a href="/tags/null-value/">
+                                    <span class="chip bg-color">null value</span>
                                 </a>
                             
                         </div>
@@ -715,9 +728,68 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/11/23/datetime-null-value/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="DateTime null value">
+                        
+                        <span class="card-title">DateTime null value</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            NULL value for DateTimeFor normal DateTimes, if you don’t initialize them at all then they will match DateTime.MinValue,
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Net/" class="post-category">
+                                    .Net
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Net/">
+                        <span class="chip bg-color">.Net</span>
+                    </a>
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C#</span>
+                    </a>
+                    
+                    <a href="/tags/null-value/">
+                        <span class="chip bg-color">null value</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/11/20/javascript-ke-li-hua/">
                     <div class="card-image">
@@ -735,9 +807,9 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -763,67 +835,6 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                     
                     <a href="/tags/Currying/">
                         <span class="chip bg-color">Currying</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/11/08/complete-guide-to-binary-tree/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Complete Guide to Binary Tree">
-                        
-                        <span class="card-title">Complete Guide to Binary Tree</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            二叉树完全指南
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Interview/" class="post-category">
-                                    Interview
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Binary-Tree/">
-                        <span class="chip bg-color">Binary Tree</span>
-                    </a>
-                    
-                    <a href="/tags/Algorithm/">
-                        <span class="chip bg-color">Algorithm</span>
-                    </a>
-                    
-                    <a href="/tags/Data-Structure/">
-                        <span class="chip bg-color">Data Structure</span>
-                    </a>
-                    
-                    <a href="/tags/Interview/">
-                        <span class="chip bg-color">Interview</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="修改Commit Message, XAVIER">
+    <meta name="keywords" content="Javascript 柯里化, XAVIER">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>修改Commit Message | XAVIER</title>
+    <title>Javascript 柯里化 | XAVIER</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">修改Commit Message</h1>
+                    <h1 class="description center-align post-title">Javascript 柯里化</h1>
                 </div>
             </div>
         </div>
@@ -369,8 +369,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/Javascript/">
+                                <span class="chip bg-color">Javascript</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%9F%AF%E9%87%8C%E5%8C%96/">
+                                <span class="chip bg-color">柯里化</span>
+                            </a>
+                        
+                            <a href="/tags/Currying/">
+                                <span class="chip bg-color">Currying</span>
                             </a>
                         
                     </div>
@@ -381,8 +389,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Git/" class="post-category">
-                                Git
+                            <a href="/categories/Javascript/" class="post-category">
+                                Javascript
                             </a>
                         
                     </div>
@@ -394,7 +402,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-17
+                    2020-11-20
                 </div>
                 
 
@@ -410,26 +418,58 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="修改Commit-Message"><a href="#修改Commit-Message" class="headerlink" title="修改Commit Message"></a>修改Commit Message</h1><h2 id="修改上一条提交的-commit-message"><a href="#修改上一条提交的-commit-message" class="headerlink" title="修改上一条提交的 commit message"></a>修改上一条提交的 commit message</h2><pre><code>git commit --ammend</code></pre>
-<h2 id="修改之前提交的-commit-message"><a href="#修改之前提交的-commit-message" class="headerlink" title="修改之前提交的 commit message"></a>修改之前提交的 commit message</h2><p>首先，我们需要使用 <code>git rebase -i</code>, <code>git rebase -i</code> 提供一个参数，指明你想要修改的提交的父提交（-i 是–interactive的缩写）</p>
-<p>例如：修改最近三次提交，事实上所指的是四次提交之前，即你想修改的提交的父提交</p>
-<pre><code>git rebase -i HEAD~3</code></pre>
-<p>接着会显示如下界面</p>
-<pre><code>pick ef3f7de158 refs #16605[Fix]Not all approver is shown
-pick e0e5e8f595 refs #17605 change goalesce field to user id
-pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_update
+                <h1 id="JavaScript-柯里化"><a href="#JavaScript-柯里化" class="headerlink" title="JavaScript 柯里化"></a>JavaScript 柯里化</h1><blockquote>
+<p>在《Mostly adequate guide》一书中，这样总结了柯里化: ——只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。</p>
+</blockquote>
+<h2 id="在-JavaScript-中实现柯里化"><a href="#在-JavaScript-中实现柯里化" class="headerlink" title="在 JavaScript 中实现柯里化"></a>在 JavaScript 中实现柯里化</h2><p>我们先写一个实现加法的函数 add</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> add <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> x <span class="token operator">+</span> y
+<span class="token punctuation">}</span></code></pre>
+<p>现在我们直接实现一个被柯里化的 add 函数，该函数名为 curriedAdd，则根据上面的定义，curriedAdd 需要满足以下条件：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token function">curriedAdd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">4</span>
 
-# Rebase 9e993debaf..3e0cfc1536 onto 9e993debaf (3 commands)
-#
-# Commands:
-# p, pick &lt;commit&gt; = use commit
-# r, reword &lt;commit&gt; = use commit, but edit the commit message
-# e, edit &lt;commit&gt; = use commit, but stop for amending</code></pre>
-<p>选择你要修改的那一条commit，把 pick 改为 edit，然后保存退出</p>
-<p>接着，就可以修改选定commit的commit message了</p>
-<pre><code>git commit --ammend</code></pre>
-<p>修改好之后，运行 <code>git rebase --continue</code></p>
-<p>然后，就没有然后了~~</p>
+<span class="token comment" spellcheck="true">// true</span>
+
+<span class="token keyword">var</span> increment <span class="token operator">=</span> <span class="token function">curriedAdd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token function">increment</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">3</span>
+
+<span class="token comment" spellcheck="true">// true</span>
+
+<span class="token keyword">var</span> addTen <span class="token operator">=</span> <span class="token function">curriedAdd</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token function">addTen</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">12</span>
+
+<span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<p>满足以上条件的 curriedAdd 的函数可以用以下代码段实现：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> curriedAdd <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> add <span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x <span class="token operator">+</span> y
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>当然以上实现是有一些问题的：它并不通用，并且我们并不想通过重新编码函数本身的方式来实现 Currying 化。</p>
+<p>但是这个 curriedAdd 的实现表明了实现 Currying 的一个基础 —— Currying 延迟求值的特性需要用到 JavaScript 中的作用域——说得更通俗一些，我们需要使用作用域来保存上一次传进来的参数。</p>
+<p>对 curriedAdd 进行抽象，可能会得到如下函数 currying ：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> currying <span class="token punctuation">(</span>fn<span class="token punctuation">,</span> <span class="token operator">...</span>args1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token operator">...</span>args2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">return</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>args1<span class="token punctuation">,</span> <span class="token operator">...</span>args2<span class="token punctuation">)</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> increment <span class="token operator">=</span> <span class="token function">currying</span><span class="token punctuation">(</span>add<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token function">increment</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">3</span>
+
+<span class="token comment" spellcheck="true">// true</span>
+
+<span class="token keyword">var</span> addTen <span class="token operator">=</span> <span class="token function">currying</span><span class="token punctuation">(</span>add<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token function">addTen</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">12</span>
+
+<span class="token comment" spellcheck="true">// true</span></code></pre>
 
             </div>
             <hr/>
@@ -455,7 +495,7 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yunzhankeji.com/2020/11/17/xiu-gai-commit-message/">https://yunzhankeji.com/2020/11/17/xiu-gai-commit-message/</a>
+                    <a href="https://yunzhankeji.com/2020/11/20/javascript-ke-li-hua/">https://yunzhankeji.com/2020/11/20/javascript-ke-li-hua/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -493,8 +533,16 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/Javascript/">
+                                    <span class="chip bg-color">Javascript</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%9F%AF%E9%87%8C%E5%8C%96/">
+                                    <span class="chip bg-color">柯里化</span>
+                                </a>
+                            
+                                <a href="/tags/Currying/">
+                                    <span class="chip bg-color">Currying</span>
                                 </a>
                             
                         </div>
@@ -719,31 +767,31 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/20/javascript-ke-li-hua/">
+                <a href="/2020/11/23/datetime-null-value/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Javascript 柯里化">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="DateTime null value">
                         
-                        <span class="card-title">Javascript 柯里化</span>
+                        <span class="card-title">DateTime null value</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            柯里化为实现多参函数提供了一个递归降解的实现思路——把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数，在某些编程语言中（如 Haskell），是通过柯里化技术支持多参函数这一语言特性的。所以柯里化原本是一门编译原理层面的技术，用途是实现多参函数。
+                            NULL value for DateTimeFor normal DateTimes, if you don’t initialize them at all then they will match DateTime.MinValue,
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Javascript/" class="post-category">
-                                    Javascript
+                            <a href="/categories/Net/" class="post-category">
+                                    .Net
                                 </a>
                             
                             
@@ -753,16 +801,16 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Javascript/">
-                        <span class="chip bg-color">Javascript</span>
+                    <a href="/tags/Net/">
+                        <span class="chip bg-color">.Net</span>
                     </a>
                     
-                    <a href="/tags/%E6%9F%AF%E9%87%8C%E5%8C%96/">
-                        <span class="chip bg-color">柯里化</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C#</span>
                     </a>
                     
-                    <a href="/tags/Currying/">
-                        <span class="chip bg-color">Currying</span>
+                    <a href="/tags/null-value/">
+                        <span class="chip bg-color">null value</span>
                     </a>
                     
                 </div>
@@ -776,31 +824,32 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/08/complete-guide-to-binary-tree/">
+                <a href="/2020/11/17/xiu-gai-commit-message/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Complete Guide to Binary Tree">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="修改Commit Message">
                         
-                        <span class="card-title">Complete Guide to Binary Tree</span>
+                        <span class="card-title">修改Commit Message</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二叉树完全指南
+                            修改Commit Message修改上一条提交的 commit messagegit commit --ammend
+修改之前提交的 commit message首先，我们需要使用 git rebase -i, git rebase -i 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Interview/" class="post-category">
-                                    Interview
+                            <a href="/categories/Git/" class="post-category">
+                                    Git
                                 </a>
                             
                             
@@ -810,20 +859,8 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Binary-Tree/">
-                        <span class="chip bg-color">Binary Tree</span>
-                    </a>
-                    
-                    <a href="/tags/Algorithm/">
-                        <span class="chip bg-color">Algorithm</span>
-                    </a>
-                    
-                    <a href="/tags/Data-Structure/">
-                        <span class="chip bg-color">Data Structure</span>
-                    </a>
-                    
-                    <a href="/tags/Interview/">
-                        <span class="chip bg-color">Interview</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>

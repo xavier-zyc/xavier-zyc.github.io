@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>DateTime null value</title>
+      <link href="2020/11/23/datetime-null-value/"/>
+      <url>2020/11/23/datetime-null-value/</url>
+      
+        <content type="html"><![CDATA[<h1 id="NULL-value-for-DateTime"><a href="#NULL-value-for-DateTime" class="headerlink" title="NULL value for DateTime"></a>NULL value for DateTime</h1><p>For normal DateTimes, if you don’t initialize them at all then they will match DateTime.MinValue, because it is a value type rather than a reference type.</p><p>You can also use a nullable DateTime, like this:</p><pre class=" language-CSharp"><code class="language-CSharp">DateTime? MyNullableDate;</code></pre><p>Or longer version:</p><pre class=" language-CSharp"><code class="language-CSharp">Nullable<DateTime> MyNullableDate;</code></pre><p>And, finally, there’s a built in way to reference the default of any type. This returns null for reference types, but for our DateTime example it will return the same as DateTime.MinValue:</p><pre class=" language-CSharp"><code class="language-CSharp">default(DateTime)</code></pre><p>or, in more recent versions of C#,</p><pre class=" language-CSharp"><code class="language-CSharp">default</code></pre><p>And you can check the value with:</p><pre class=" language-CSharp"><code class="language-CSharp">if (dt.HasValue){  // Do something with dt.Value}</code></pre><p>Or you can use it like:</p><pre class=" language-CSharp"><code class="language-CSharp">DateTime dt2 = dt ?? DateTime.MinValue;</code></pre><p>You can read more here:<br><a href="http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx">http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> .Net </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> .Net </tag>
+            
+            <tag> C# </tag>
+            
+            <tag> null value </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Javascript 柯里化</title>
+      <link href="2020/11/20/javascript-ke-li-hua/"/>
+      <url>2020/11/20/javascript-ke-li-hua/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JavaScript-柯里化"><a href="#JavaScript-柯里化" class="headerlink" title="JavaScript 柯里化"></a>JavaScript 柯里化</h1><blockquote><p>在《Mostly adequate guide》一书中，这样总结了柯里化: ——只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数。</p></blockquote><h2 id="在-JavaScript-中实现柯里化"><a href="#在-JavaScript-中实现柯里化" class="headerlink" title="在 JavaScript 中实现柯里化"></a>在 JavaScript 中实现柯里化</h2><p>我们先写一个实现加法的函数 add</p><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> add <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">}</span></code></pre><p>现在我们直接实现一个被柯里化的 add 函数，该函数名为 curriedAdd，则根据上面的定义，curriedAdd 需要满足以下条件：</p><pre class=" language-javascript"><code class="language-javascript"><span class="token function">curriedAdd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">4</span><span class="token comment" spellcheck="true">// true</span><span class="token keyword">var</span> increment <span class="token operator">=</span> <span class="token function">curriedAdd</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token function">increment</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">3</span><span class="token comment" spellcheck="true">// true</span><span class="token keyword">var</span> addTen <span class="token operator">=</span> <span class="token function">curriedAdd</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token function">addTen</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">12</span><span class="token comment" spellcheck="true">// true</span></code></pre><p>满足以上条件的 curriedAdd 的函数可以用以下代码段实现：</p><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> curriedAdd <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token keyword">return</span> <span class="token keyword">function</span> add <span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">return</span> x <span class="token operator">+</span> y  <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><p>当然以上实现是有一些问题的：它并不通用，并且我们并不想通过重新编码函数本身的方式来实现 Currying 化。</p><p>但是这个 curriedAdd 的实现表明了实现 Currying 的一个基础 —— Currying 延迟求值的特性需要用到 JavaScript 中的作用域——说得更通俗一些，我们需要使用作用域来保存上一次传进来的参数。</p><p>对 curriedAdd 进行抽象，可能会得到如下函数 currying ：</p><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> currying <span class="token punctuation">(</span>fn<span class="token punctuation">,</span> <span class="token operator">...</span>args1<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token operator">...</span>args2<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">return</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span>args1<span class="token punctuation">,</span> <span class="token operator">...</span>args2<span class="token punctuation">)</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">var</span> increment <span class="token operator">=</span> <span class="token function">currying</span><span class="token punctuation">(</span>add<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token function">increment</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">3</span><span class="token comment" spellcheck="true">// true</span><span class="token keyword">var</span> addTen <span class="token operator">=</span> <span class="token function">currying</span><span class="token punctuation">(</span>add<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token function">addTen</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">12</span><span class="token comment" spellcheck="true">// true</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Javascript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+            <tag> 柯里化 </tag>
+            
+            <tag> Currying </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>修改Commit Message</title>
       <link href="2020/11/17/xiu-gai-commit-message/"/>
       <url>2020/11/17/xiu-gai-commit-message/</url>
