@@ -119,3 +119,68 @@ List<Integer> traverse(TreeNode root) {
   return result;
 }
 ```
+
+## 反转二叉树
+
+原二叉树
+
+```
+     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9
+```
+
+反转后的二叉树
+
+```
+     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1
+```
+
+### 递归思路： 
+
+1. 判断根是否为空，为空直接返回根，否则继续
+2. 递归反转根子树
+
+```java
+TreeNode invertNode(TreeNode root) {
+  if (null == root) return root;
+  TreeNode left = root.left;
+  root.left = invertNode(root.right);
+  root.right = invertNode(left);
+  return root;
+}
+```
+
+### 非递归思路：
+
+1. 判断根是否为空，根为空直接返回根，否则继续
+2. 交换根节点的左右子节点
+3. 交换第二层的左右子树
+4. 重复下去，直到最后一个节点
+
+```java
+TreeNode invertNode(TreeNode root) {
+  if (null == root) return root;
+  Queue<TreeNode> queue = new LinkedList<TreeNode>();
+  queue.add(root);
+  while(queue != null) {
+    TreeNode current = queue.poll();
+    TreeNode __left = current.left;
+    current.left = current.right;
+    current.right = __left;
+    while (null !== current.left) {
+      queue.add(current.left);
+    }
+    while (null !== current.right) {
+      queue.add(current.right);
+    }
+  }
+  return root;
+}
+```
