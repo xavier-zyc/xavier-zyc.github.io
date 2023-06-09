@@ -106,28 +106,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -205,28 +183,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
 		</a>
           
         </li>
@@ -376,7 +332,7 @@
         coverSlider.carousel({
             duration: Number('120'),
             fullWidth: true,
-            indicators: 'true' === 'true',
+            indicators: 'false' === 'true',
             onCycleTo() {
                 if (!initUserPressedOrDraggedActive) {
                     // console.log('initUserPressedOrDraggedActive')
@@ -388,32 +344,11 @@
 
         let carouselIntervalId;
         
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
 
         function restartPlay() {
             
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
         };
 
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
         
     });
 </script>
@@ -469,7 +404,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/11/23/datetime-null-value/">
+                    <a href="/2020/11/23/datetime-null-value/" style="text-decoration: none;">
                         <div class="card-image">
                             
                             
@@ -477,14 +412,16 @@
                             
                             <span class="card-title">DateTime null value</span>
                         </div>
-                    </a>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                NULL value for DateTimeFor normal DateTimes, if you don’t initialize them at all then they will match DateTime.MinValue,
-                            
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    NULL value for DateTimeFor normal DateTimes, if you don’t initialize them at all then they will match DateTime.MinValue,
+                                
+                            </div>
                         </div>
+                    </a>
+                    <div class="card-content article-content">
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-11-23
@@ -501,7 +438,7 @@
                             </span>
                         </div>
                     </div>
-
+    
                     
                     <div class="card-action article-tags">
                         
@@ -524,7 +461,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/11/20/javascript-ke-li-hua/">
+                    <a href="/2020/11/20/javascript-ke-li-hua/" style="text-decoration: none;">
                         <div class="card-image">
                             
                             
@@ -532,14 +469,16 @@
                             
                             <span class="card-title">Javascript 柯里化</span>
                         </div>
-                    </a>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                柯里化为实现多参函数提供了一个递归降解的实现思路——把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数，在某些编程语言中（如 Haskell），是通过柯里化技术支持多参函数这一语言特性的。所以柯里化原本是一门编译原理层面的技术，用途是实现多参函数。
-                            
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    柯里化为实现多参函数提供了一个递归降解的实现思路——把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数，在某些编程语言中（如 Haskell），是通过柯里化技术支持多参函数这一语言特性的。所以柯里化原本是一门编译原理层面的技术，用途是实现多参函数。
+                                
+                            </div>
                         </div>
+                    </a>
+                    <div class="card-content article-content">
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-11-20
@@ -556,7 +495,7 @@
                             </span>
                         </div>
                     </div>
-
+    
                     
                     <div class="card-action article-tags">
                         
@@ -579,7 +518,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/11/17/xiu-gai-commit-message/">
+                    <a href="/2020/11/17/xiu-gai-commit-message/" style="text-decoration: none;">
                         <div class="card-image">
                             
                             
@@ -587,15 +526,17 @@
                             
                             <span class="card-title">修改Commit Message</span>
                         </div>
-                    </a>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                修改Commit Message修改上一条提交的 commit messagegit commit --ammend
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    修改Commit Message修改上一条提交的 commit messagegit commit --ammend
 修改之前提交的 commit message首先，我们需要使用 git rebase -i, git rebase -i 
-                            
+                                
+                            </div>
                         </div>
+                    </a>
+                    <div class="card-content article-content">
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
@@ -612,7 +553,7 @@
                             </span>
                         </div>
                     </div>
-
+    
                     
                     <div class="card-action article-tags">
                         
@@ -627,7 +568,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/11/08/complete-guide-to-binary-tree/">
+                    <a href="/2020/11/08/complete-guide-to-binary-tree/" style="text-decoration: none;">
                         <div class="card-image">
                             
                             
@@ -635,14 +576,16 @@
                             
                             <span class="card-title">Complete Guide to Binary Tree</span>
                         </div>
-                    </a>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                二叉树完全指南
-                            
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+                                
+                                    二叉树完全指南
+                                
+                            </div>
                         </div>
+                    </a>
+                    <div class="card-content article-content">
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
@@ -659,7 +602,7 @@
                             </span>
                         </div>
                     </div>
-
+    
                     
                     <div class="card-action article-tags">
                         
@@ -701,7 +644,13 @@
             <a href="/about" target="_blank">xavier</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            &nbsp;|&nbsp;<span id="icp" style="margin-left: 12px;"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17048263号-1</a>
+            </span>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">1.2k</span>&nbsp;字
             
             
             
@@ -722,11 +671,6 @@
             <br>
             
             <br>
-            
-            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
-                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17048263号-1</a>
-            </span>
-            
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
 
