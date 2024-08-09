@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="修改Commit Message, XAVIER">
+    <meta name="keywords" content="RTSP转WebRTC方案, XAVIER">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>修改Commit Message | XAVIER</title>
+    <title>RTSP转WebRTC方案 | XAVIER</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">修改Commit Message</h1>
+                    <h1 class="description center-align post-title">RTSP转WebRTC方案</h1>
                 </div>
             </div>
         </div>
@@ -325,8 +325,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/RTSP/">
+                                <span class="chip bg-color">RTSP</span>
+                            </a>
+                        
+                            <a href="/tags/WebRTC/">
+                                <span class="chip bg-color">WebRTC</span>
                             </a>
                         
                     </div>
@@ -337,8 +341,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Git/" class="post-category">
-                                Git
+                            <a href="/categories/Javascript/" class="post-category">
+                                Javascript
                             </a>
                         
                     </div>
@@ -350,21 +354,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-17
+                    2024-08-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-17
+                    2024-08-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    239
+                    266
                 </div>
                 
 
@@ -386,26 +390,72 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="修改Commit-Message"><a href="#修改Commit-Message" class="headerlink" title="修改Commit Message"></a>修改Commit Message</h1><h2 id="修改上一条提交的-commit-message"><a href="#修改上一条提交的-commit-message" class="headerlink" title="修改上一条提交的 commit message"></a>修改上一条提交的 commit message</h2><pre><code>git commit --ammend</code></pre>
-<h2 id="修改之前提交的-commit-message"><a href="#修改之前提交的-commit-message" class="headerlink" title="修改之前提交的 commit message"></a>修改之前提交的 commit message</h2><p>首先，我们需要使用 <code>git rebase -i</code>, <code>git rebase -i</code> 提供一个参数，指明你想要修改的提交的父提交（-i 是–interactive的缩写）</p>
-<p>例如：修改最近三次提交，事实上所指的是四次提交之前，即你想修改的提交的父提交</p>
-<pre><code>git rebase -i HEAD~3</code></pre>
-<p>接着会显示如下界面</p>
-<pre><code>pick ef3f7de158 refs #16605[Fix]Not all approver is shown
-pick e0e5e8f595 refs #17605 change goalesce field to user id
-pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_update
+                <h1 id="方案一：RTSP转WebRTC，再用video播放"><a href="#方案一：RTSP转WebRTC，再用video播放" class="headerlink" title="方案一：RTSP转WebRTC，再用video播放"></a>方案一：RTSP转WebRTC，再用video播放</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20937557/article/details/129879697">https://blog.csdn.net/qq_20937557/article/details/129879697</a></p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>video <span class="token punctuation">:</span>id<span class="token operator">=</span><span class="token string">"videoId"</span> <span class="token punctuation">:</span>autoplay<span class="token operator">=</span><span class="token string">"true"</span> <span class="token punctuation">:</span>height<span class="token operator">=</span><span class="token string">"height"</span> <span class="token punctuation">:</span>width<span class="token operator">=</span><span class="token string">"width"</span> <span class="token punctuation">:</span>controls<span class="token operator">=</span><span class="token string">"false"</span> <span class="token punctuation">:</span>muted<span class="token operator">=</span><span class="token string">"true"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>video<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
 
-# Rebase 9e993debaf..3e0cfc1536 onto 9e993debaf (3 commands)
-#
-# Commands:
-# p, pick &lt;commit&gt; = use commit
-# r, reword &lt;commit&gt; = use commit, but edit the commit message
-# e, edit &lt;commit&gt; = use commit, but stop for amending</code></pre>
-<p>选择你要修改的那一条commit，把 pick 改为 edit，然后保存退出</p>
-<p>接着，就可以修改选定commit的commit message了</p>
-<pre><code>git commit --ammend</code></pre>
-<p>修改好之后，运行 <code>git rebase --continue</code></p>
-<p>然后，就没有然后了~~</p>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getUUID <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@/utils'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  data <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      webRtcServer<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+      videoId<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`dahua_video_player_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rstpUrl<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      type<span class="token punctuation">:</span> String
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    height<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token number">240</span><span class="token punctuation">,</span>
+      type<span class="token punctuation">:</span> Number
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    width<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token number">320</span><span class="token punctuation">,</span>
+      type<span class="token punctuation">:</span> Number
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    webStreamerUrl<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token string">'http://localhost:8000'</span><span class="token punctuation">,</span>
+      type<span class="token punctuation">:</span> String
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  mounted <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// eslint-disable-next-line no-undef</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>webRtcServer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebRtcStreamer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoId<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>webStreamerUrl<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>webRtcServer<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>rstpUrl<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  beforeDestroy <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>webRtcServer<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>webRtcServer <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+</code></pre>
+<h1 id="方案二：用MediaMtx先把监控的RTSP转成其他格式，然后再用对应的播放器播放"><a href="#方案二：用MediaMtx先把监控的RTSP转成其他格式，然后再用对应的播放器播放" class="headerlink" title="方案二：用MediaMtx先把监控的RTSP转成其他格式，然后再用对应的播放器播放"></a>方案二：用MediaMtx先把监控的RTSP转成其他格式，然后再用对应的播放器播放</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/bluenviron/mediamtx?tab=readme-ov-file#rtsp-clients">https://github.com/bluenviron/mediamtx?tab=readme-ov-file#rtsp-clients</a></p>
+</blockquote>
+<p>Most IP cameras expose their video stream by using a RTSP server that is embedded into the camera itself. In particular, cameras that are compliant with ONVIF profile S or T meet this requirement. You can use MediaMTX to connect to one or multiple existing RTSP servers and read their video streams:</p>
+<pre><code>paths:
+  proxied:
+    # url of the source stream, in the format rtsp://user:pass@host:port/path
+    source: rtsp://original-url</code></pre>
+<p>The resulting stream will be available in path /proxied.</p>
+<p>The server supports any number of source streams (count is just limited by available hardware resources) it’s enough to add additional entries to the paths section:</p>
+<pre><code>paths:
+  proxied1:
+    source: rtsp://url1
+
+  proxied2:
+    source: rtsp://url1</code></pre>
 
             </div>
             <hr/>
@@ -431,7 +481,7 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://caishome.com/2020/11/17/xiu-gai-commit-message/">http://caishome.com/2020/11/17/xiu-gai-commit-message/</a>
+                    <a href="http://caishome.com/2024/08/09/rtsp-zhuan-webrtc-fang-an/">http://caishome.com/2024/08/09/rtsp-zhuan-webrtc-fang-an/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -469,8 +519,12 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/RTSP/">
+                                    <span class="chip bg-color">RTSP</span>
+                                </a>
+                            
+                                <a href="/tags/WebRTC/">
+                                    <span class="chip bg-color">WebRTC</span>
                                 </a>
                             
                         </div>
@@ -691,29 +745,30 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/11/20/javascript-ke-li-hua/">
+                <a href="/2024/08/09/rtsp-zhuan-webrtc-fang-an/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Javascript 柯里化">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="RTSP转WebRTC方案">
                         
-                        <span class="card-title">Javascript 柯里化</span>
+                        <span class="card-title">RTSP转WebRTC方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            柯里化为实现多参函数提供了一个递归降解的实现思路——把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数，在某些编程语言中（如 Haskell），是通过柯里化技术支持多参函数这一语言特性的。所以柯里化原本是一门编译原理层面的技术，用途是实现多参函数。
+                            方案一：RTSP转WebRTC，再用video播放；方案二：用MediaMtx先把监控的RTSP转成其他格式，然后再用对应的播放器播放
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -726,19 +781,16 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Javascript/">
-                        <span class="chip bg-color">Javascript</span>
+                    <a href="/tags/RTSP/">
+                        <span class="chip bg-color">RTSP</span>
                     </a>
                     
-                    <a href="/tags/%E6%9F%AF%E9%87%8C%E5%8C%96/">
-                        <span class="chip bg-color">柯里化</span>
-                    </a>
-                    
-                    <a href="/tags/Currying/">
-                        <span class="chip bg-color">Currying</span>
+                    <a href="/tags/WebRTC/">
+                        <span class="chip bg-color">WebRTC</span>
                     </a>
                     
                 </div>
@@ -752,31 +804,31 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/08/complete-guide-to-binary-tree/">
+                <a href="/2020/11/23/datetime-null-value/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Complete Guide to Binary Tree">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="DateTime null value">
                         
-                        <span class="card-title">Complete Guide to Binary Tree</span>
+                        <span class="card-title">DateTime null value</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二叉树完全指南
+                            NULL value for DateTimeFor normal DateTimes, if you don’t initialize them at all then they will match DateTime.MinValue,
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Interview/" class="post-category">
-                                    Interview
+                            <a href="/categories/Net/" class="post-category">
+                                    .Net
                                 </a>
                             
                             
@@ -786,20 +838,16 @@ pick 3e0cfc1536 refs #17605 change user id to immutable and required_true_can_up
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Binary-Tree/">
-                        <span class="chip bg-color">Binary Tree</span>
+                    <a href="/tags/Net/">
+                        <span class="chip bg-color">.Net</span>
                     </a>
                     
-                    <a href="/tags/Algorithm/">
-                        <span class="chip bg-color">Algorithm</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C#</span>
                     </a>
                     
-                    <a href="/tags/Data-Structure/">
-                        <span class="chip bg-color">Data Structure</span>
-                    </a>
-                    
-                    <a href="/tags/Interview/">
-                        <span class="chip bg-color">Interview</span>
+                    <a href="/tags/null-value/">
+                        <span class="chip bg-color">null value</span>
                     </a>
                     
                 </div>
