@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: https://yunzhankeji.com
+url: http://caishome.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -61,11 +61,11 @@ permalink_pinyin:
   separator: '-' # default: '-'
 postInfo:
   date: true
-  update: false
-  wordCount: false # set true.
-  totalCount: false # set true.
-  min2read: false # set true.
-  readCount: false # set true.
+  update: true
+  wordCount: true # set true.
+  totalCount: true # set true.
+  min2read: true # set true.
+  readCount: true # set true.
 githubEmojis:
   enable: true
   className: github-emoji
