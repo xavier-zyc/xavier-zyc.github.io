@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="RTSP转WebRTC方案, XAVIER">
+    <meta name="keywords" content="佳能G3800出现5b00错误怎么解决, XAVIER">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>RTSP转WebRTC方案 | XAVIER</title>
+    <title>佳能G3800出现5b00错误怎么解决 | XAVIER</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">RTSP转WebRTC方案</h1>
+                    <h1 class="description center-align post-title">佳能G3800出现5b00错误怎么解决</h1>
                 </div>
             </div>
         </div>
@@ -325,12 +325,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/RTSP/">
-                                <span class="chip bg-color">RTSP</span>
+                            <a href="/tags/%E4%BD%B3%E8%83%BD%E6%89%93%E5%8D%B0%E6%9C%BA/">
+                                <span class="chip bg-color">佳能打印机</span>
                             </a>
                         
-                            <a href="/tags/WebRTC/">
-                                <span class="chip bg-color">WebRTC</span>
+                            <a href="/tags/5B00%E9%94%99%E8%AF%AF/">
+                                <span class="chip bg-color">5B00错误</span>
                             </a>
                         
                     </div>
@@ -341,8 +341,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Javascript/" class="post-category">
-                                Javascript
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                工具
                             </a>
                         
                     </div>
@@ -354,21 +354,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-08-09
+                    2024-09-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-08-09
+                    2024-09-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    266
+                    93
                 </div>
                 
 
@@ -390,72 +390,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="方案一：RTSP转WebRTC，再用video播放"><a href="#方案一：RTSP转WebRTC，再用video播放" class="headerlink" title="方案一：RTSP转WebRTC，再用video播放"></a>方案一：RTSP转WebRTC，再用video播放</h1><blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20937557/article/details/129879697">https://blog.csdn.net/qq_20937557/article/details/129879697</a></p>
-</blockquote>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
-  <span class="token operator">&lt;</span>div<span class="token operator">></span>
-    <span class="token operator">&lt;</span>video <span class="token punctuation">:</span>id<span class="token operator">=</span><span class="token string">"videoId"</span> <span class="token punctuation">:</span>autoplay<span class="token operator">=</span><span class="token string">"true"</span> <span class="token punctuation">:</span>height<span class="token operator">=</span><span class="token string">"height"</span> <span class="token punctuation">:</span>width<span class="token operator">=</span><span class="token string">"width"</span> <span class="token punctuation">:</span>controls<span class="token operator">=</span><span class="token string">"false"</span> <span class="token punctuation">:</span>muted<span class="token operator">=</span><span class="token string">"true"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>video<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> getUUID <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@/utils'</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-  data <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span>
-      webRtcServer<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
-      videoId<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`dahua_video_player_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  props<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    rstpUrl<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
-      type<span class="token punctuation">:</span> String
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    height<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token number">240</span><span class="token punctuation">,</span>
-      type<span class="token punctuation">:</span> Number
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    width<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token number">320</span><span class="token punctuation">,</span>
-      type<span class="token punctuation">:</span> Number
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    webStreamerUrl<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token string">'http://localhost:8000'</span><span class="token punctuation">,</span>
-      type<span class="token punctuation">:</span> String
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  mounted <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">// eslint-disable-next-line no-undef</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>webRtcServer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebRtcStreamer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>videoId<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>webStreamerUrl<span class="token punctuation">)</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>webRtcServer<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>rstpUrl<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  beforeDestroy <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>webRtcServer<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>webRtcServer <span class="token operator">=</span> <span class="token keyword">null</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-</code></pre>
-<h1 id="方案二：用MediaMtx先把监控的RTSP转成其他格式，然后再用对应的播放器播放"><a href="#方案二：用MediaMtx先把监控的RTSP转成其他格式，然后再用对应的播放器播放" class="headerlink" title="方案二：用MediaMtx先把监控的RTSP转成其他格式，然后再用对应的播放器播放"></a>方案二：用MediaMtx先把监控的RTSP转成其他格式，然后再用对应的播放器播放</h1><blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/bluenviron/mediamtx?tab=readme-ov-file#rtsp-clients">https://github.com/bluenviron/mediamtx?tab=readme-ov-file#rtsp-clients</a></p>
-</blockquote>
-<p>Most IP cameras expose their video stream by using a RTSP server that is embedded into the camera itself. In particular, cameras that are compliant with ONVIF profile S or T meet this requirement. You can use MediaMTX to connect to one or multiple existing RTSP servers and read their video streams:</p>
-<pre><code>paths:
-  proxied:
-    # url of the source stream, in the format rtsp://user:pass@host:port/path
-    source: rtsp://original-url</code></pre>
-<p>The resulting stream will be available in path /proxied.</p>
-<p>The server supports any number of source streams (count is just limited by available hardware resources) it’s enough to add additional entries to the paths section:</p>
-<pre><code>paths:
-  proxied1:
-    source: rtsp://url1
-
-  proxied2:
-    source: rtsp://url1</code></pre>
+                <h2 id="进入维修模式"><a href="#进入维修模式" class="headerlink" title="进入维修模式"></a>进入维修模式</h2><ol>
+<li>先关闭电源 打印机放纸</li>
+<li>按下【停止】键，再按【电源】 键。(两键都不松开)</li>
+<li>当电源灯点亮时，不松【电源】键，只松【停止】键 </li>
+<li>连按5次【停止】键，两键同时松开。</li>
+<li>电源灯长亮，进入成功。(有时两个灯)</li>
+</ol>
+<h2 id="清零操作"><a href="#清零操作" class="headerlink" title="清零操作"></a>清零操作</h2><p>使用清零软件工具， 下载地址：<a href="/medias/softwares/CannonWicReset.7z">CannonWicReset</a></p>
 
             </div>
             <hr/>
@@ -481,7 +423,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://caishome.com/2024/08/09/rtsp-zhuan-webrtc-fang-an/">http://caishome.com/2024/08/09/rtsp-zhuan-webrtc-fang-an/</a>
+                    <a href="http://caishome.com/2024/09/04/jia-neng-g3800-chu-xian-5b00-cuo-wu-zen-me-jie-jue/">http://caishome.com/2024/09/04/jia-neng-g3800-chu-xian-5b00-cuo-wu-zen-me-jie-jue/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -519,12 +461,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/RTSP/">
-                                    <span class="chip bg-color">RTSP</span>
+                                <a href="/tags/%E4%BD%B3%E8%83%BD%E6%89%93%E5%8D%B0%E6%9C%BA/">
+                                    <span class="chip bg-color">佳能打印机</span>
                                 </a>
                             
-                                <a href="/tags/WebRTC/">
-                                    <span class="chip bg-color">WebRTC</span>
+                                <a href="/tags/5B00%E9%94%99%E8%AF%AF/">
+                                    <span class="chip bg-color">5B00错误</span>
                                 </a>
                             
                         </div>
@@ -745,9 +687,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/09/04/jia-neng-g3800-chu-xian-5b00-cuo-wu-zen-me-jie-jue/">
                     <div class="card-image">
@@ -765,9 +708,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -780,6 +723,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -802,31 +746,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/23/datetime-null-value/">
+                <a href="/2024/08/09/rtsp-zhuan-webrtc-fang-an/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="DateTime null value">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="RTSP转WebRTC方案">
                         
-                        <span class="card-title">DateTime null value</span>
+                        <span class="card-title">RTSP转WebRTC方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            NULL value for DateTimeFor normal DateTimes, if you don’t initialize them at all then they will match DateTime.MinValue,
+                            方案一：RTSP转WebRTC，再用video播放；方案二：用MediaMtx先把监控的RTSP转成其他格式，然后再用对应的播放器播放
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Net/" class="post-category">
-                                    .Net
+                            <a href="/categories/Javascript/" class="post-category">
+                                    Javascript
                                 </a>
                             
                             
@@ -836,16 +780,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Net/">
-                        <span class="chip bg-color">.Net</span>
+                    <a href="/tags/RTSP/">
+                        <span class="chip bg-color">RTSP</span>
                     </a>
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C#</span>
-                    </a>
-                    
-                    <a href="/tags/null-value/">
-                        <span class="chip bg-color">null value</span>
+                    <a href="/tags/WebRTC/">
+                        <span class="chip bg-color">WebRTC</span>
                     </a>
                     
                 </div>

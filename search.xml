@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>佳能G3800出现5b00错误怎么解决</title>
+      <link href="2024/09/04/jia-neng-g3800-chu-xian-5b00-cuo-wu-zen-me-jie-jue/"/>
+      <url>2024/09/04/jia-neng-g3800-chu-xian-5b00-cuo-wu-zen-me-jie-jue/</url>
+      
+        <content type="html"><![CDATA[<h2 id="进入维修模式"><a href="#进入维修模式" class="headerlink" title="进入维修模式"></a>进入维修模式</h2><ol><li>先关闭电源 打印机放纸</li><li>按下【停止】键，再按【电源】 键。(两键都不松开)</li><li>当电源灯点亮时，不松【电源】键，只松【停止】键 </li><li>连按5次【停止】键，两键同时松开。</li><li>电源灯长亮，进入成功。(有时两个灯)</li></ol><h2 id="清零操作"><a href="#清零操作" class="headerlink" title="清零操作"></a>清零操作</h2><p>使用清零软件工具， 下载地址：<a href="/medias/softwares/CannonWicReset.7z">CannonWicReset</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 佳能打印机 </tag>
+            
+            <tag> 5B00错误 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>RTSP转WebRTC方案</title>
       <link href="2024/08/09/rtsp-zhuan-webrtc-fang-an/"/>
       <url>2024/08/09/rtsp-zhuan-webrtc-fang-an/</url>
